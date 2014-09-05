@@ -19,15 +19,15 @@ class Index extends Controller
     { 
     	$perfis = $this->perfil->getAll();
 		
-		print '<h1>Welcome to the Liz Nano Framework</h1><a href="/index/save">Add new</a><hr>';
-    	
-    	if(count($perfis) <= 0) {
+		if(count($perfis) <= 0) {
     		return print 'Perfis not found';
     	}
 
-    	foreach($perfis as $p) {
-    		print '<li>' . $p['name'] . ' <a href="/index/delete/?id=' . $p['id'] . '">&times;</a></li><hr>';
-    	}
+        $this->view->perfis = $perfis;
+    	
+        // foreach($perfis as $p) {
+    	// 	print '<li>' . $p['name'] . ' <a href="/index/delete/?id=' . $p['id'] . '">&times;</a></li><hr>';
+    	// }
     }
 
     public function save()

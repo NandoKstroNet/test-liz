@@ -1,0 +1,7 @@
+<h1>Welcome to the Liz Nano Framework</h1>
+<a href="/index/save">Add new</a>
+<hr>
+<?php
+foreach($this->perfis as $p) {
+ 	print '<li>' . $p['name'] . ' <a href="/index/delete/?id=' . $p['id'] . '">&times;</a></li><hr>';
+}
