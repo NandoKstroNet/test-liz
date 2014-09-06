@@ -19,15 +19,7 @@ class Index extends Controller
     { 
     	$perfis = $this->perfil->getAll();
 		
-		if(count($perfis) <= 0) {
-    		return print 'Perfis not found';
-    	}
-
         $this->view->perfis = $perfis;
-    	
-        // foreach($perfis as $p) {
-    	// 	print '<li>' . $p['name'] . ' <a href="/index/delete/?id=' . $p['id'] . '">&times;</a></li><hr>';
-    	// }
     }
 
     public function save()
@@ -48,7 +40,7 @@ class Index extends Controller
 
 	    	print "Save with success";
     	}
-    	#else require the form automatic	
+    	#else require the form	
     }
 
     public function delete()

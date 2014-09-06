@@ -2,6 +2,14 @@
 <a href="/index/save">Add new</a>
 <hr>
 <?php
-foreach($this->perfis as $p) {
- 	print '<li>' . $p['name'] . ' <a href="/index/delete/?id=' . $p['id'] . '">&times;</a></li><hr>';
-}
+if(count($this->perfis) == 0):
+?>
+<h4>Nada encontrado.</h4>
+<?php 
+else:
+	
+	foreach($this->perfis as $p) {
+	 	print '<li>' . $p['name'] . ' <a href="/index/delete/?id=' . $p['id'] . '">&times;</a></li><hr>';
+	}
+endif;
+?>
